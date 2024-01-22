@@ -7,12 +7,19 @@ import css from "../Style/PasswordInput";
 import Imgs from '../../../Global/Images';
 import str from '../../../Global/Strings';
 
-function Password() {
+function Password({ action, value }) {
   const [eye, setEye] = useState(false);
+
   return (
     <View style={css.container}>
       <Image style={css.icon} source={Imgs.passwordIcon} />
-      <TextInput style={css.input} placeholder={str.placeholders.password} />
+      <TextInput
+        style={css.input}
+        value={value}
+        onChangeText={action}
+        placeholder={str.placeholders.password}
+        secureTextEntry={!eye}
+      />
       <TouchableOpacity onPress={() => setEye(p => !p)}>
         <Image style={css.icon} source={!eye ? Imgs.eyeClose : Imgs.eyeOpen} />
       </TouchableOpacity>
