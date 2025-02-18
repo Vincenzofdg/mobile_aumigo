@@ -1,28 +1,32 @@
-import { StyleSheet, ImageBackground, Dimensions } from 'react-native';
+import {StyleSheet, ImageBackground, Dimensions} from 'react-native';
 
-import imgs from '../Global/Images';
+import CoverImage from '../assets/background/Cover.jpg';
+import LoginImage from '../assets/background/Login.jpg';
 
-const d = Dimensions.get('window')
+const {width, height} = Dimensions.get('window');
 
 function Background({name}) {
-  const { background } = imgs
+    const options = {
+        Cover: CoverImage,
+        Login: LoginImage,
+    };
 
-  return (
-    <ImageBackground
-      source={background[name]}
-      resizeMode="cover"
-      style={styles.container}
-    />
-  );
+    return (
+        <ImageBackground
+            source={options[name]}
+            resizeMode="cover"
+            style={styles.container}
+        />
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'white',
-    position: 'absolute',
-    height: d.height,
-    width: d.width,
-  }
-})
+    container: {
+        backgroundColor: 'white',
+        position: 'absolute',
+        height,
+        width,
+    },
+});
 
 export default Background;
