@@ -20,17 +20,14 @@ export const options = {
     },
     tab: {
         headerShown: false,
-        tabBarShowLabel: true,
-        tabBarLabelStyle: {
-            color: '#96AFFF',
-            marginBottom: 8,
-        },
+        tabBarShowLabel: false,
         tabBarStyle: {
             display: 'flex',
             backgroundColor: 'transparent',
             borderTopWidth: 0,
-            height: Platform.OS === 'ios' ? 70 : 60,
+            height: Platform.OS === 'ios' ? 70 : 50,
             marginTop: Platform.OS === 'ios' ? 15 : 5,
+            paddingTop: 2,
             elevation: 0,
             shadowOpacity: 0,
         },

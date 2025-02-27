@@ -15,7 +15,7 @@ function CoverButton({name}) {
                 navigate('Login');
             },
             google: () => {
-                navigate('Home');
+                navigate('HomeTab');
             },
         };
 

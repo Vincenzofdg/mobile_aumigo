@@ -1,13 +1,13 @@
 import {TouchableOpacity, Text, StyleSheet, Dimensions} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-const {width, height} = Dimensions.get('screen');
+const {width} = Dimensions.get('screen');
 
 function LoginButton({canBePressed, payload}) {
     const {navigate} = useNavigation();
 
     const handleClick = () => {
-        return;
+        navigate('HomeTab');
     };
 
     return (
